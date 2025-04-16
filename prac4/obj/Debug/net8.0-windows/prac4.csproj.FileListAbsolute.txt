@@ -18,3 +18,4 @@ C:\Users\kl\source\repos\prac4\prac4\obj\Debug\net8.0-windows\refint\prac4.dll
 C:\Users\kl\source\repos\prac4\prac4\obj\Debug\net8.0-windows\prac4.pdb
 C:\Users\kl\source\repos\prac4\prac4\obj\Debug\net8.0-windows\prac4.genruntimeconfig.cache
 C:\Users\kl\source\repos\prac4\prac4\obj\Debug\net8.0-windows\ref\prac4.dll
+C:\Users\kl\source\repos\prac4\prac4\obj\Debug\net8.0-windows\prac4.sourcelink.json

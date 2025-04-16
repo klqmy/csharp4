@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:prac4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="350">
+        Title="Engineering Calculator" 
+        Height="500" 
+        Width="350"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -16,7 +19,6 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -25,41 +27,85 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="TextBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" FontSize="30" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" TextAlignment="Right" Text="0"/>
-        <Button Grid.Row="1" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">sin</Button>
-        <Button Grid.Row="1" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">π</Button>
-        <Button Grid.Row="1" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">e</Button>
-        <Button Grid.Row="1" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="ClearEntryButton_Click">CE</Button>
-        <Button Grid.Row="1" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="DeleteButton_Click">DEL</Button>
-        <Button Grid.Row="2" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">x²</Button>
-        <Button Grid.Row="2" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">1/x</Button>
-        <Button Grid.Row="2" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">|x|</Button>
-        <Button Grid.Row="2" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">COS</Button>
-        <Button Grid.Row="2" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">tg</Button>
-        <Button Grid.Row="3" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">2√x</Button>
-        <Button Grid.Row="3" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">(</Button>
-        <Button Grid.Row="3" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">)</Button>
-        <Button Grid.Row="3" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">n!</Button>
-        <Button Grid.Row="3" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="OperationButton_Click">/</Button>
-        <Button Grid.Row="4" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">x</Button>
-        <Button Grid.Row="4" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">7</Button>
-        <Button Grid.Row="4" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">8</Button>
-        <Button Grid.Row="4" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">9</Button>
-        <Button Grid.Row="4" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="OperationButton_Click">*</Button>
-        <Button Grid.Row="5" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">10^x</Button>
-        <Button Grid.Row="5" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">4</Button>
-        <Button Grid.Row="5" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">5</Button>
-        <Button Grid.Row="5" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">6</Button>
-        <Button Grid.Row="5" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="OperationButton_Click">-</Button>
-        <Button Grid.Row="6" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">log</Button>
-        <Button Grid.Row="6" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">1</Button>
-        <Button Grid.Row="6" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">2</Button>
-        <Button Grid.Row="6" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">3</Button>
-        <Button Grid.Row="6" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="OperationButton_Click">+</Button>
-        <Button Grid.Row="7" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">ln</Button>
-        <Button Grid.Row="7" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">+/-</Button>
-        <Button Grid.Row="7" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="NumberButton_Click">0</Button>
-        <Button Grid.Row="7" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20">,</Button>
-        <Button Grid.Row="7" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" Click="EqualsButton_Click">=</Button>
+
+        <TextBox x:Name="TextBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" 
+                 FontSize="30" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                 Margin="10" TextAlignment="Right" Text="0"/>
+
+        <Button Grid.Row="1" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">sin</Button>
+        <Button Grid.Row="1" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="ConstantButton_Click">π</Button>
+        <Button Grid.Row="1" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="ConstantButton_Click">e</Button>
+        <Button Grid.Row="1" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="ClearEntryButton_Click">CE</Button>
+        <Button Grid.Row="1" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="DeleteButton_Click">DEL</Button>
+        <Button Grid.Row="2" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">x²</Button>
+        <Button Grid.Row="2" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">1/x</Button>
+        <Button Grid.Row="2" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">|x|</Button>
+        <Button Grid.Row="2" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">COS</Button>
+        <Button Grid.Row="2" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">tg</Button>
+
+        <Button Grid.Row="3" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">2√x</Button>
+        <Button Grid.Row="3" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="BracketButton_Click">(</Button>
+        <Button Grid.Row="3" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="BracketButton_Click">)</Button>
+        <Button Grid.Row="3" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">n!</Button>
+        <Button Grid.Row="3" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="OperationButton_Click">/</Button>
+
+        <Button Grid.Row="4" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="OperationButton_Click">x</Button>
+        <Button Grid.Row="4" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">7</Button>
+        <Button Grid.Row="4" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">8</Button>
+        <Button Grid.Row="4" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">9</Button>
+        <Button Grid.Row="4" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="OperationButton_Click">*</Button>
+
+        <Button Grid.Row="5" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">10^x</Button>
+        <Button Grid.Row="5" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">4</Button>
+        <Button Grid.Row="5" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">5</Button>
+        <Button Grid.Row="5" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">6</Button>
+        <Button Grid.Row="5" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="OperationButton_Click">-</Button>
+
+        <Button Grid.Row="6" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">log</Button>
+        <Button Grid.Row="6" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">1</Button>
+        <Button Grid.Row="6" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">2</Button>
+        <Button Grid.Row="6" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">3</Button>
+        <Button Grid.Row="6" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="OperationButton_Click">+</Button>
+
+        <Button Grid.Row="7" Grid.Column="0" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="FunctionButton_Click">ln</Button>
+        <Button Grid.Row="7" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="SignButton_Click">+/-</Button>
+        <Button Grid.Row="7" Grid.Column="2" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="NumberButton_Click">0</Button>
+        <Button Grid.Row="7" Grid.Column="3" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="DecimalButton_Click">,</Button>
+        <Button Grid.Row="7" Grid.Column="4" FontFamily="Times New Roman" FontWeight="Bold" 
+                FontSize="20" Click="EqualsButton_Click">=</Button>
     </Grid>
 </Window>
